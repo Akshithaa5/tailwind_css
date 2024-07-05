@@ -12,7 +12,7 @@ const Video = () => {
               title="Appzy Video Demo"
               className="w-full rounded-lg overflow-hidden"
               controls
-              poster="/assets/images/1 (3).png" // Optional poster image
+              poster="/assets/images/1 (3).png" 
             >
               <source
                 src="/assets/videos/Playcodec%20-%20Animated%20Explainer%20Video%20Financial%20App.mp4"
@@ -27,7 +27,7 @@ const Video = () => {
           <div className="absolute bottom-0 left-0 -mb-12 ml-40">
             <img src="/assets/images/bottom-left.png" alt="Decorative Bottom Left" width={150} height={100} />
           </div>
-          <div className="absolute top-0 right-0 -mt-10 mr-40"> {/* Adjusted positioning */}
+          <div className="absolute top-0 right-0 -mt-10 mr-40"> 
             <img src="/assets/images/top-right.png" alt="Decorative Top Right" width={150} height={100} />
           </div>
         </div>
