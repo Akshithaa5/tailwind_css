@@ -1,0 +1,31 @@
+/* Add this CSS in your global styles or a relevant CSS file */
+
+/* Define keyframes for each image animation */
+@keyframes move {
+    0%, 20%, 100% { transform: translateX(0); }
+    25%, 45% { transform: translateX(100%); }
+    50%, 70% { transform: translateX(200%); }
+    75%, 95% { transform: translateX(300%); }
+  }
+  
+  /* Apply animation to each image */
+  .animate-move:nth-child(1) {
+    animation: move 10s linear infinite;
+  }
+  
+  .animate-move:nth-child(2) {
+    animation: move 10s linear infinite 2s;
+  }
+  
+  .animate-move:nth-child(3) {
+    animation: move 10s linear infinite 4s;
+  }
+  
+  .animate-move:nth-child(4) {
+    animation: move 10s linear infinite 6s;
+  }
+  
+  .animate-move:nth-child(5) {
+    animation: move 10s linear infinite 8s;
+  }
+  
