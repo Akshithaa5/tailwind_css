@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import testimonials from "./testimonials"; // Assuming you have an array of testimonials as imported
+import testimonials from "./testimonials"; 
 
 const TestimonialSection = () => {
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
