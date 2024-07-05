@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const Navbar = () => {
-  const [activeLink, setActiveLink] = useState('Hero'); // Default active link
-  const navRef = useRef(null); // Ref for the navbar container
+  const [activeLink, setActiveLink] = useState('Hero'); 
+  const navRef = useRef(null); 
 
   // Function to handle scroll and update active link
   const handleScroll = () => {
-    const scrollPosition = window.scrollY + 200; // Adjusted scroll position for better accuracy
+    const scrollPosition = window.scrollY + 200; 
 
-    // Check if elements are available before accessing offsetTop
+    
     const sections = [
       { id: 'Hero', ref: document.getElementById('Hero') },
       { id: 'Features', ref: document.getElementById('Features') },
@@ -19,7 +19,7 @@ const Navbar = () => {
       { id: 'blog', ref: document.getElementById('blog') },
     ];
 
-    // Find which section is currently in view
+  
     for (let i = sections.length - 1; i >= 0; i--) {
       const section = sections[i];
       if (section.ref && section.ref.offsetTop <= scrollPosition) {
@@ -41,15 +41,15 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', scrollListener);
     };
-  }, []); // Empty dependency array to run effect only once on mount
+  }, []); 
 
   // Function to handle clicking on a navigation link
   const handleClick = (id) => {
-    setActiveLink(id); // Update active link state
+    setActiveLink(id); 
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 200, // Adjusted scroll position for better accuracy
+        top: element.offsetTop - 200, 
         behavior: 'smooth',
       });
     }
@@ -79,13 +79,13 @@ const Navbar = () => {
         <NavLink href="#blog" activeLink={activeLink} onClick={() => handleClick('blog')}>
           Blog
         </NavLink>
-        {/* Red line indicator */}
+     
         <div
           className="absolute bottom-0 h-0.5 bg-red-500"
           style={{
             left: getIndicatorPosition(activeLink),
-            width: '50px', // Adjust the width of the red line as needed
-            transition: 'left 0.3s ease', // Smooth transition for left position
+            width: '50px', 
+            transition: 'left 0.3s ease', 
           }}
         ></div>
       </div>
@@ -95,7 +95,7 @@ const Navbar = () => {
 
 // NavLink component to handle individual links
 const NavLink = ({ href, activeLink, onClick, children }) => {
-  const isActive = activeLink === href.substring(1); // Check if current link is active
+  const isActive = activeLink === href.substring(1); 
 
   return (
     <a
@@ -104,7 +104,7 @@ const NavLink = ({ href, activeLink, onClick, children }) => {
       onClick={onClick}
       style={{
         position: 'relative',
-        borderBottom: 'none', // Remove the default bottom border
+        borderBottom: 'none', 
       }}
     >
       {children}
@@ -119,7 +119,7 @@ const getIndicatorPosition = (activeLink) => {
   const activeNavLink = document.querySelector(`a[href="#${activeLink}"]`);
   if (activeNavLink) {
     const navRect = activeNavLink.getBoundingClientRect();
-    return `${navRect.left}px`; // Position the red line under the active link
+    return `${navRect.left}px`; 
   }
-  return '0px'; // Default position if no active link found
+  return '0px'; 
 };
