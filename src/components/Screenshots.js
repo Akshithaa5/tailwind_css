@@ -34,7 +34,7 @@ const Screenshots = () => {
           {/* Mockup Container */}
           <div className="mockup-container flex justify-around items-center w-full relative overflow-hidden">
             {images.map((image, index) => (
-              <div key={index} className={`mockup-item relative w-1/5 p-1`}>
+              <div key={index} className={`mockup-item relative ${index === 2 ? 'w-1/5' : 'w-1/8'}`}>
                 {/* Screenshot Image */}
                 <div className="relative w-full h-full flex items-center justify-center">
                   <img
@@ -49,7 +49,9 @@ const Screenshots = () => {
                   <img
                     src="/assets/images/mockup-dark.png"
                     alt="Dark Mockup"
-                    className="absolute top-0 left-0 w-full h-full z-30 object-contain"
+                    layout="fill"
+                    objectFit="contain"
+                    className="absolute top-0 left-0 z-30"
                   />
                 )}
                 {/* Light Mockup */}
